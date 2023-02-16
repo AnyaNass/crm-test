@@ -1,0 +1,27 @@
+.user {
+	display: flex;
+}
+
+.user__avatar {
+	width: 42px;
+	height: 42px;
+}
+
+.user__meta {
+	margin: 0 0 0 12px;
+}
+
+.user__name {
+	font-size: 14px;
+	line-height: calc(21 / 14) 21px;
+	letter-spacing: 0.01em;
+	color: $text_dark;
+}
+
+.user__role {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: calc(18 / 12);
+	letter-spacing: 0.01em;
+	color: $user__role;
+}

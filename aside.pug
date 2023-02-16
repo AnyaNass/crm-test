@@ -1,0 +1,22 @@
+include mixin
+- let menuItems = [{name: "Dashboard", icon: "dashbord"}, {name: "Product", icon: "product"}, {name:  "Customers", icon: "customers"}, {name: "Income", icon:"income"}, {name: "Promote", icon: "promote"}, {name: "Help", icon:"help"}]
+
+aside.aside
+	div.navigation__wrap
+		.logo
+			a(href="/" class="logo__link") 
+				img.logo__image(src="./images/logo/logo.svg", alt="Logo")
+				span.logo__version v.01
+		nav.nav
+			ul(class=["nav__menu", "js-nav"])
+				each item in menuItems
+					li.nav__item
+						.nav__wrap
+							+svg(`${item.icon}`)
+							p.nav__category #{item.name}
+						+svg("arrow")
+	.user
+		img.user__avatar(src="images/user/avatar.jpg", alt="Avatar")
+		.user__meta
+			p.user__name Evano
+			p.user__role Project Manager

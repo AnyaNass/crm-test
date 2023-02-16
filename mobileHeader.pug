@@ -1,0 +1,10 @@
+include mixin
+
+header.mobile-header
+	.logo
+			a(href="/" class="logo__link") 
+				img.logo__image(src="./images/logo/logo.svg", alt="Logo")
+				span.logo__version v.01
+	button(class="mobile-header__burger js-burger" type="button")
+		svg
+			use(class="mobile-header__icon" href='images/sprite/sprite.svg#burger')

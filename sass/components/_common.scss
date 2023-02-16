@@ -1,0 +1,11 @@
+body {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: calc(21 / 14);
+	letter-spacing: -0.01em;
+
+	&.no-scroll {
+		overflow: hidden;
+	}
+}

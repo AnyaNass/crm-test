@@ -1,0 +1,60 @@
+include mixin
+- const tableCategories = ["Customer Name", "Company", "Phone Number", "Email", "Country", "Status"];
+- const customersList = [{name: "Jane Cooper", company: "Microsoft", phone: "(225) 555-0118", email: "jane@microsoft.com", country: "United States", status: true},{name: "Floyd Miles", company: "Yahoo", phone: "(205) 555-0100", email: "floyd@yahoo.com", country: "Kiribati", status: false},{name: "Ronald Richards", company: "Adobe", phone: "(302) 555-0107", email: "ronald@adobe.com", country: "Israel", status: false},{name: "Marvin McKinney", company: "Tesla", phone: "(252) 555-0126", email: "marvin@tesla.com", country: "Iran", status: true},{name: "Jerome Bell", company: "Google", phone: "(629) 555-0129", email: "jerome@google.com", country: "Réunion", status: true},{name: "Kathryn Murphy", company: "Microsoft", phone: "(406) 555-0120", email: "kathryn@microsoft.com", country: "Curaçao", status: true},{name: "Jacob Jones", company: "Yahoo", phone: "(208) 555-0112", email: "jacob@yahoo.com", country: "Brazil", status: true},{name: "Kristin Watson", company: "Facebook", phone: "(704) 555-0127", email: "kristin@facebook.com", country: "Åland Islands", status: false}];
+
+main.main
+	h1.main__title Hello Evano 👋🏼,
+	.customers 
+		.customers__head
+			div.customers__head-wrap
+				h2.customers__title All Customers
+				button(class="customers__active-filter" type="button") Active Members
+			label.search
+				input(type="text" placeholder="Search" class="search__field")
+				+svg("search")
+		.table-desktop-wrap
+			table.table
+				thead.table__head
+					tr
+						each category in tableCategories
+							th.table__category #{category}
+				tbody.table__body 
+					each customer in customersList
+						tr.table__row
+							td.table__cell #{customer.name}
+							td.table__cell #{customer.company}
+							td.table__cell #{customer.phone}
+							td.table__cell #{customer.email}
+							td.table__cell #{customer.country}
+							td.table__cell
+								button(class=`table__status-btn ${customer.status ? "active" : "inactive"} js-customer-status-btn` type="button") #{customer.status ? "Active" : "Inactive"}
+		.table-mobile-wrap
+			table.table-mobile
+				tbody.table-mobile__body
+					each customer in customersList
+						tr.table-mobile__row
+							th.table-mobile__category Name
+							td.table-mobile__cell #{customer.name}
+						tr.table-mobile__row
+							th.table-mobile__category Company
+							td.table-mobile__cell #{customer.company}
+						tr.table-mobile__row
+							th.table-mobile__category Number
+							td.table-mobile__cell #{customer.phone}
+						tr.table-mobile__row
+							th.table-mobile__category Email
+							td.table-mobile__cell #{customer.email}
+						tr.table-mobile__row
+							th.table-mobile__category Country
+							td.table-mobile__cell #{customer.country}
+						tr.table-mobile__row
+							th.table-mobile__category Status
+							td.table-mobile__cell
+								button(class=`table__status-btn ${customer.status ? "active" : "inactive"} js-customer-status-btn` type="button") #{customer.status ? "Active" : "Inactive"}
+			
+		.pagination
+			p.pagination__amount-info Showing data 1 to 8 of  256K entries
+			.pagination__pages
+				button(class="pagination__button arrow js-pagination-prev" type="button") <
+				ul(class="pagination__list js-pagination-list") 
+				button(class="pagination__button arrow js-pagination-next" type="button") >

@@ -1,0 +1,83 @@
+.table-desktop-wrap {
+	display: none;
+
+	@media (min-width: 1440px) {
+		display: block;
+	}
+}
+
+.table {
+	padding: 20px 44px 16px 36px;
+	width: 100%;
+	overflow: hidden;
+	border-spacing: 0px;
+	table-layout: fixed;
+}
+
+.table__head {
+	position: relative;
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		height: 1px;
+		width: 100vw;
+		background-color: #eee;
+	}
+
+}
+
+.table__category {
+	padding: 0 0 14px 0;
+	text-align: left;
+	color: $table_head_category;
+
+	&:last-child {
+		text-align: center;
+	}
+}
+
+.table__cell {
+	color: $main_text_color;
+	height: 69px;
+	border-bottom: 1px solid #EEEEEE;
+	transition: border-color $transition;
+	overflow-wrap: break-word;
+
+	&:last-child {
+		text-align: center;
+	}
+
+	.table__row:hover & {
+		border-color: rgba(89, 50, 234, 0.5);
+	}
+
+}
+
+.table__status-btn {
+	padding: 4px 12px;
+	border-radius: 4px;
+	min-width: 80px;
+	transition: background-color $transition;
+
+	&.active {
+		color: $active_btn_text;
+		background-color: $active_btn_bg;
+		border: 1px solid $active_btn_border;
+	}
+
+	&.inactive {
+		color: $inactive_btn_text;
+		background-color: $inactive_btn_bg;
+		border: 1px solid $inactive_btn_border;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: $light_bg;
+	}
+}

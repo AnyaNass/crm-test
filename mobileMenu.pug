@@ -1,0 +1,15 @@
+include mixin
+- let mobileMenuItems = [{name: "Dashboard", icon: "dashbord"}, {name: "Product", icon: "product"}, {name:  "Customers", icon: "customers"}, {name: "Income", icon:"income"}, {name: "Promote", icon: "promote"}, {name: "Help", icon:"help"}]
+
+div(class=["mobile-menu", "js-mobile-menu"])
+	nav.mobile-nav
+		ul(class=["mobile-nav__list", "js-mobile-nav"])
+			each item in mobileMenuItems
+				li.mobile-nav__item
+					+svg(`${item.icon}`)
+					p.mobile-nav__category #{item.name}
+	.user
+		img.user__avatar(src="images/user/avatar.jpg", alt="Avatar")
+		.user__meta
+			p.user__name Evano
+			p.user__role Project Manager

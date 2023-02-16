@@ -1,0 +1,20 @@
+include mixin
+
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet", type="text/css", href="css/main.min.css")
+		title Document
+	body
+		include mobileHeader
+		include mobileMenu
+		include aside
+		include main
+		
+		script(src="js/mobileMenu.js") 
+		script(src="js/navigation.js")
+		script(src="js/customerStatus.js")
+		script(src="js/pagination.js") 

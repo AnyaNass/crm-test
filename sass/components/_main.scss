@@ -1,0 +1,140 @@
+.main {
+	margin: 80px 0 0;
+	padding: 20px 15px;
+	background-color: $main_bg_color;
+
+	@media (min-width: 1440px) {
+		margin: 0 0 0 306px;
+		padding: 41px 95px 41px 71px;
+	}
+}
+
+.main__title {
+	font-size: 24px;
+	line-height: calc(36 / 24);
+	color: $text_dark;
+	text-align: center;
+
+	@media (min-width: 1440px) {
+		text-align: left;
+	}
+}
+
+.customers {
+	margin: 35px auto 0;
+	max-width: 480px;
+	padding: 0 15px;
+	background: $light_bg;
+	box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
+	border-radius: 30px;
+
+	@media (min-width: 768px) {
+		max-width: 700px;
+	}
+
+	@media (min-width: 1440px) {
+		margin: 51px 0 0;
+		padding: 0;
+		max-width: none;
+	}
+}
+
+.customers__head {
+	padding: 15px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+
+	@media (min-width: 1440px) {
+		margin: 35px 0 0;
+		padding: 30px 53px 20px 38px;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0;
+	}
+}
+
+.customers__head-wrap {
+	text-align: center;
+
+	@media (min-width: 1440px) {
+		text-align: left;
+	}
+}
+
+.customers__title {
+	font-weight: 600;
+	font-size: 22px;
+	line-height: calc(33 / 22);
+	letter-spacing: -0.01em;
+	color: $text_dark;
+}
+
+.customers__active-filter {
+	position: relative;
+	margin: 7px 0 0;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: calc(21 / 14);
+	letter-spacing: -0.01em;
+	color: #16C098;
+	transition: color $transition;
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 1px;
+		background-color: $accent_color;
+		transition: width $transition;
+	}
+
+	&:hover,
+	&:focus {
+		color: $accent_color;
+
+		&::after {
+			width: 100%;
+		}
+	}
+}
+
+.search {
+	position: relative;
+
+	svg {
+		position: absolute;
+		top: 50%;
+		left: 8px;
+		transform: translateY(-50%);
+		width: 24px;
+		height: 24px;
+		stroke: #7E7E7E;
+	}
+}
+
+.search__field {
+	padding: 10px 10px 10px 40px;
+	width: 100%;
+	background: $main_bg_color;
+	border-radius: 10px;
+	border: 1px solid transparent;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: calc(21 / 14);
+	letter-spacing: -0.01em;
+	color: $text_dark;
+	transition: border-color $transition;
+
+	&:focus {
+		border-color: $accent_color;
+	}
+
+	@media (min-width: 1440px) {
+		width: 216px;
+	}
+}

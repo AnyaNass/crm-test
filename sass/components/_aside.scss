@@ -1,0 +1,17 @@
+.aside {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 306px;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 36px 28px 76px;
+	background: $light_bg;
+	box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.5);
+
+	@media (min-width: 1440px) {
+		display: flex;
+	}
+}
